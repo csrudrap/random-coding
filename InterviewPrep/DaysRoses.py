@@ -15,13 +15,12 @@ Requirement: Solution in n*log(n)
 '''
 
 # n^2 approach:
-
+import re
 def continuous_zeroes(bit_arr, K):
     # Something like 10011, K = 2
     # And with       11111 = 10011
     str_arr = map(str, bit_arr)
     str_str = ''.join(str_arr)
-    import re
     str_zeroes = '0' * K
     to_cmp = re.compile(r"""(1{0}1|1{0}$|^{0}1)""".format(str_zeroes))
     return to_cmp.search(str_str) is not None
