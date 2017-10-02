@@ -1,10 +1,10 @@
 # Check if a string has unique characters:
 
 def isUniq(s):
-    d = {}
+    s_set = set()
     for i in s:
-        if i not in d.keys():
-            d[i] = 1
+        if i not in s_set:
+            s_set.add(i)
         else:
             return False
     return True
